@@ -10,26 +10,71 @@ TechSpecs API provides the easiest way to get instant access to the official tec
 * Tablets
 * Smartwatches
 
-**Available Endpoints;**
-* POST: Search for a product
-* GET: Detailed specifications of a product
-* GET: All Categories
-* GET: All Brands
+**Available Features;**
+* Search for a product
+* Get the detailed specifications of a product
+* Get a list of all product categories
+* Get a list of all brands
+* Get a list of all products from a specific brand
 
 **Available Datapoints;**
 * Specifications: **Dimension, Weight, Display, Camera, Battery, CPU, GPU, and over 200 more…**
 * Images: **Front view, Back view**
-* Prices: Available Soon
-
-## Try It
-Visit https://techspecs.readme.io to try the endpoints. 
+* Launch Prices: Available for iOS devices
 
 
-## Get API Key
-Visit https://developer.dashboard.techspecs.io/signup to signup and get your API key. Registration is free, no credit card required.
+## Prerequisite: Get your TechSpecs API Key & URL
+Visit https://developer.techspecs.io/ to signup and get your API key. Registration is free, no credit card required.
 
+## 1. Product Search
+### Python Example
 
+```python
+import requests
 
+url = "YOUR URL"
+
+payload = {"category": "smartphone"}
+headers = {
+    "Accept": "application/json",
+    "x-blobr-key": "YOUR API KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.request("POST", url, json=payload, headers=headers)
+
+print(response.text)
+```
+
+### Node Example 
+```node
+const sdk = require('api')('@techspecs/v3.0#3co1cxkzu4d7xe');
+
+sdk['search-products']({category: 'smartphone'}, {
+  query: 'iPhone%2013',
+  'x-blobr-key': 'YOUR API KEY'
+})
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
+```
+### PHP Example
+```php
+<?php
+require_once('vendor/autoload.php');
+
+$client = new \GuzzleHttp\Client();
+
+$response = $client->request('POST', 'YOUR URL', [
+  'body' => '{"category":"smartphone"}',
+  'headers' => [
+    'Accept' => 'application/json',
+    'Content-Type' => 'application/json',
+    'x-blobr-key' => 'YOUR API KEY',
+  ],
+]);
+
+echo $response->getBody();
+```
 ## Read the Docs
 Visit https://techspecs.readme.io to read the documentation. 
 
