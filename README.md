@@ -40,10 +40,6 @@ Visit https://techspecs.readme.io to read the documentation.
 ## Search Engine Demo
 Visit https://techspecs.io to try the frontend search engine
 
-![alt text](https://i.ibb.co/Sx0gk2V/1-011-Homepage-Typing-Selected-2x.png)
-
-![alt text](https://i.imgur.com/siSmSIS.png)
-
 ## Feedback
 Visit https://feedback.techspecs.io/ to share your feedback and/or feature requests.
 
