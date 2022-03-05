@@ -24,9 +24,6 @@ TechSpecs API provides the easiest way to get instant access to the official tec
 ## Try It
 Visit https://techspecs.readme.io to try the endpoints. 
 
-![alt text](https://i.imgur.com/VJLZSE3.png)
-
-
 
 ## Get API Key
 Visit https://developer.dashboard.techspecs.io/signup to signup and get your API key. Registration is free, no credit card required.
