@@ -13,9 +13,9 @@ TechSpecs API provides the easiest way to get instant access to the official tec
 **Available Features;**
 * Search for a product
 * Get the detailed specifications of a product
-* Get a list of all product categories
-* Get a list of all brands
-* Get a list of all products from a specific brand
+* Get all categories
+* Get all brands
+* Get all products
 
 **Available Datapoints;**
 * Specifications: **Dimension, Weight, Display, Camera, Battery, CPU, GPU, and over 200 more…**
@@ -24,7 +24,7 @@ TechSpecs API provides the easiest way to get instant access to the official tec
 
 
 ## Prerequisite: Get your TechSpecs API Key & URL
-Visit https://developer.techspecs.io/ to signup and get your API key. Registration is free, no credit card required.
+Visit https://techspecs.io to signup and get your API key. Registration is free, no credit card required.
 
 ## 1. Product Search
 ### Python Example
@@ -32,29 +32,25 @@ Visit https://developer.techspecs.io/ to signup and get your API key. Registrati
 ```python
 import requests
 
-url = "YOUR URL"
+url = "https://api.techspecs.io/v4/product/search?query=iPhone%2014"
 
-payload = {"category": "smartphone"}
 headers = {
-    "Accept": "application/json",
-    "x-blobr-key": "YOUR API KEY",
-    "Content-Type": "application/json"
+    "accept": "application/json",
+    "Authorization": "Bearer techspecs_api_key",
+    "content-type": "application/json"
 }
 
-response = requests.request("POST", url, json=payload, headers=headers)
+response = requests.post(url, headers=headers)
 
 print(response.text)
 ```
 
 ### Node Example 
 ```node
-const sdk = require('api')('@techspecs/v3.0#3co1cxkzu4d7xe');
+const sdk = require('api')('@techspecs/v3.0#5dlse1lclezifmcf');
 
-sdk['search-products']({category: 'smartphone'}, {
-  query: 'iPhone%2013',
-  'x-blobr-key': 'YOUR API KEY'
-})
-  .then(res => console.log(res))
+sdk.searchProducts({query: 'iPhone%2014', authorization: 'Bearer techspecs_api_key'})
+  .then(({ data }) => console.log(data))
   .catch(err => console.error(err));
 ```
 ### PHP Example
@@ -64,23 +60,18 @@ require_once('vendor/autoload.php');
 
 $client = new \GuzzleHttp\Client();
 
-$response = $client->request('POST', 'YOUR URL', [
-  'body' => '{"category":"smartphone"}',
+$response = $client->request('POST', 'https://api.techspecs.io/v4/product/search?query=iPhone%2014', [
   'headers' => [
-    'Accept' => 'application/json',
-    'Content-Type' => 'application/json',
-    'x-blobr-key' => 'YOUR API KEY',
+    'Authorization' => 'Bearer techspecs_api_key',
+    'accept' => 'application/json',
+    'content-type' => 'application/json',
   ],
 ]);
 
 echo $response->getBody();
 ```
-## Read the Docs
+## Docs and code samples
 Visit https://techspecs.readme.io to read the documentation. 
-
-
-## Search Engine Demo
-Visit https://techspecs.io to try the frontend search engine
 
 ## Feedback
 Visit https://feedback.techspecs.io/ to share your feedback and/or feature requests.
