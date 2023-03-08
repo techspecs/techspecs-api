@@ -9,13 +9,14 @@ TechSpecs API provides the easiest way to get instant access to the official tec
 * Smartphones
 * Tablets
 * Smartwatches
+* Laptops
 
-**Available Features;**
-* Search for a product
-* Get the detailed specifications of a product
-* Get all categories
-* Get all brands
-* Get all products
+**Available Endpoints;**
+* Product Search
+* Product Details
+* Get All Categories
+* Get All Brands
+* Get All Products
 
 **Available Datapoints;**
 * Specifications: **Dimension, Weight, Display, Camera, Battery, CPU, GPU, and over 200 more…**
